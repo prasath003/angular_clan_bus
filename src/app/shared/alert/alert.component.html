@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+  <b>Amount : </b> ₹ {{dataToShow.amount}}<br>
+  <b>Food : </b> ₹ {{dataToShow.food}}<br>
+  <b>Total Amount : </b> ₹ {{dataToShow.totalAmount}}<br>
+</div>
+<div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Pay</button>
+    </div>
+  </div>
+  <div class="col-lg-4"></div>
+</div>
+
+

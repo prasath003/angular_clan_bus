@@ -1,0 +1,49 @@
+
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <mat-card style="margin-top: 10px;">
+      <mat-card-title align="center">{{'Login.Login_Title' | translate}}</mat-card-title>
+      <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="login(loginForm.value)">
+        <mat-card-content>
+
+          <mat-form-field appearance="outline">
+            <mat-label>{{'Login.Login_UserId' | translate}}</mat-label>
+            <input matInput type="text" placeholder="User Id" formControlName="userId" id="userId">
+            <mat-error *ngIf="hasLoginError('userId', 'required')">User Name is required</mat-error>
+            <mat-error *ngIf="hasLoginError('userId', 'maxlength')">You have more than 10 characters</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>{{'Login.Login_UserPassword' | translate}}</mat-label>
+            <input matInput type="password" placeholder="Password" formControlName="password" id="password">
+            <mat-hint align="end">Not less then 8 characters long.</mat-hint>
+            <mat-error *ngIf="hasLoginError('password', 'required')">Password is required</mat-error>
+            <mat-error *ngIf="hasLoginError('password', 'minLength')">You have less than 8 characters</mat-error>
+          </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions align="center">
+         <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
+          <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+          <br *ngIf="loading">
+          <span style="color: red" *ngIf="display !=undefined">{{display}}</span><br>
+          <button *ngIf="!loading" mat-raised-button color="primary"
+                  [disabled]="!loginForm.valid">{{'Login.Login_Button' | translate}}</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
+<!--<div class="row">
+  <div class="col-lg-4">
+    <app-loading-skeleton></app-loading-skeleton>
+  </div>
+  <div class="col-lg-4">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="col-lg-4">
+    <button mat-button (click)="openAlert()">Confirm box</button>
+  </div>
+</div>-->

@@ -1,0 +1,29 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+html,body{
+  height: 100%;
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+.gap {
+  margin-right: 10px;
+}
+
+.cdk-overlay-container{
+  left:200px;
+  top:200px;
+}
+.cdk-overlay-connected-position-bounding-box{
+  top:0 !important;
+
+}

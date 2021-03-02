@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{'landing.Application_name' | translate}}</span>
+    <span class="space"></span>
+    <button mat-button [matMenuTriggerFor]="language">
+      <mat-icon matBadge="2" matBadgeColor="accent" matBadgePosition="above after"
+                matTooltip="Change your language">language
+      </mat-icon>
+    </button>
+    <mat-menu #language="matMenu">
+      <button mat-menu-item (click)="translate.use('en')">English</button>
+      <button mat-menu-item (click)="translate.use('ta')">Tamil</button>
+    </mat-menu>
+
+    <span><button color="primary" mat-raised-button
+                  (click)="openDialog('Register')">{{'Register.Register_button' | translate}}</button></span>
+    &nbsp;&nbsp;
+    <span><button color="primary" mat-raised-button
+                  (click)="openDialog('Login')">{{'Login.Login_Button' | translate}}</button></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div style="width: 100%" *ngIf="showScreen">
+  <app-project-registeration></app-project-registeration>
+</div>
+
+<div style="width: 100%" *ngIf="!showScreen">
+  <app-project-login></app-project-login>
+</div>
+
+

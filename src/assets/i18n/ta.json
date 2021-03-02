@@ -1,0 +1,63 @@
+{
+  "landing": {
+    "Application_name": "நூலகம்"
+  },
+  "Register": {
+    "Next_Button": "Próximo",
+    "Back_Button": "atrás",
+    "Register_button": "பதிவு",
+    "Registration_Title": "Registro",
+    "Registration_Entry_1_Title": "Detalles de la hipoteca",
+    "Registration_Select_Mortage_Type": "Seleccione tipo de hipoteca",
+    "Registration_Property_Value": "Valor de propiedad",
+    "Registration_Deposit": "Depositar",
+    "Registration_Entry_2_Title": "Detalles personales y de ocupación",
+    "Registration_Salutation": "Salutation",
+    "Registration_Gender": "Gender",
+    "Registration_Full_Name": "Nombre completo",
+    "Registration_National_Id": "Numero de identificacion nacional",
+    "Registration_Address_Line_1": "Dirección Línea 1",
+    "Registration_Address_Line_2": "Dirección Línea 2",
+    "Registration_Pincode": "código postal",
+    "Registration_Occupation": "Ocupación",
+    "Registration_Entry_3_Title": "Detalles de contacto",
+    "Registration_Mobile_Number": "\nகைபேசி எண்",
+    "Registration_Email": "Correo electrónico",
+    "Registration_UserName": "\nபயனர் பெயர்"
+  },
+  "Login": {
+    "Login_Button": "உள்நுழைய",
+    "Login_Title": "\nஉள்நுழைய",
+    "Login_UserId": "\nபயனர் ஐடி",
+    "Login_UserPassword": "கடவுச்சொல்"
+  },
+  "Main": {
+    "App_Title": "நூலகம்",
+    "Option_1_Title": "புத்தகங்கள்",
+    "Option_2_Title": "பயனர்கள்",
+    "Option_3_Title": "Option 3"
+  },
+  "Table": {
+    "Title": "\nபயனர் விவரங்கள்",
+    "Position_1_Title": "\nபயனர் பெயர்",
+    "Position_2_Title": "கைபேசி",
+    "Position_3_Title": "நூல்",
+    "Position_4_Title": "\nதனித்துவமான ஐடி",
+    "Position_5_Title": "செயல்"
+  },
+  "list": {
+    "userName":"User",
+    "userBooks": "Books",
+    "userMobile" : "Mobile",
+    "userId": "Unique ID",
+    "userAction": "Action"
+  },
+  "option": {
+    "bookSearch": "புத்தகப் பெயர் அல்லது எழுத்தாளர் மூலம் தேடுங்கள்",
+    "bookName": "புத்தகத்தின் பெயர்",
+    "bookAuthor": "\nபுத்தக ஆசிரியர்",
+    "bookCategory": "தொழில்நுட்பம்",
+    "bookCount": "\nபுத்தகங்கள் இல்லை",
+    "addBook": "புத்தகத்தைச் சேர்க்கவும்"
+  }
+}

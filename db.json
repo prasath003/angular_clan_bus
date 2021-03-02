@@ -1,0 +1,148 @@
+{
+  "books": [
+    {
+      "bookName": "Java Fundamentals",
+      "bookCount": 4,
+      "bookAuthor": "Java Prasath",
+      "bookTechnology": "Coding",
+      "id": 1
+    },
+    {
+      "bookName": "Javascript",
+      "bookCount": 6,
+      "bookAuthor": "Javascript Prasath",
+      "bookTechnology": "Coding",
+      "id": 2
+    },
+    {
+      "bookName": "Swift Advanced",
+      "bookCount": 4,
+      "bookAuthor": "Swift Prasath",
+      "bookTechnology": "Coding",
+      "id": 3
+    },
+    {
+      "bookName": "History of India",
+      "bookCount": 9,
+      "bookAuthor": "Politicians",
+      "bookTechnology": "General",
+      "id": 4
+    },
+    {
+      "bookName": "History of US",
+      "bookCount": 2,
+      "bookAuthor": "Politicians",
+      "bookTechnology": "General",
+      "id": 5
+    },
+    {
+      "bookName": "History of World",
+      "bookCount": 2,
+      "bookAuthor": "Humans",
+      "bookTechnology": "World",
+      "id": 6
+    },
+    {
+      "bookName": " Animals",
+      "bookCount": 3,
+      "bookAuthor": "Humans",
+      "bookTechnology": "Wild life",
+      "id": 7
+    },
+    {
+      "bookName": "History of ING",
+      "bookAuthor": "HCL",
+      "bookCategory": "General",
+      "bookCount": "2",
+      "id": 8
+    },
+    {
+      "bookName": "Google Maps",
+      "bookAuthor": "Google",
+      "bookCategory": "Technology",
+      "bookCount": "3",
+      "id": 9
+    },
+    {
+      "bookName": "Gmail",
+      "bookAuthor": "Google",
+      "bookCategory": "Tech",
+      "bookCount": "2",
+      "id": 10
+    }
+  ],
+  "users": [
+    {
+      "userName": "Prasath",
+      "mobileNo": 9177777778,
+      "bookId": [],
+      "bookName": [],
+      "id": 1
+    },
+    {
+      "userName": "Darasana",
+      "mobileNo": 17263721637,
+      "bookId": [
+        1,
+        4
+      ],
+      "bookName": [
+        "Java Fundamentals",
+        "History of India"
+      ],
+      "id": 2
+    },
+    {
+      "userName": "sample",
+      "mobileNo": 123123123,
+      "bookId": [
+        2
+      ],
+      "bookName": [
+        "Javascript"
+      ],
+      "id": 3
+    },
+    {
+      "userName": "prasath sample",
+      "mobileNo": 1283782173,
+      "bookId": [],
+      "bookName": [],
+      "id": 6
+    },
+    {
+      "userName": "sampleboy",
+      "mobileNo": 1234,
+      "bookId": [],
+      "bookName": [],
+      "id": 7
+    },
+    {
+      "userName": "hahah",
+      "mobileNo": 12312,
+      "bookId": [
+        1,
+        1
+      ],
+      "bookName": [
+        "Java Fundamentals",
+        "Java Fundamentals"
+      ],
+      "id": 10
+    },
+    {
+      "userName": "samplegirl",
+      "mobileNo": 123213123,
+      "bookId": [],
+      "bookName": [],
+      "id": 11
+    },
+    {
+      "userName": "user",
+      "mobileNo": 1213213,
+      "bookId": [],
+      "bookName": [],
+      "id": 12
+    }
+  ]
+}

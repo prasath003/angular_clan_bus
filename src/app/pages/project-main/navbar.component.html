@@ -1,0 +1,105 @@
+<div [ngClass]="{'alternative':otherTheme}" style="height: 100%">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+        #drawer
+        class="sidenav"
+        fixedInViewport="false"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="!(isHandset$ | async)">
+      <mat-toolbar color="primary">
+        <!-- <mat-card>
+           <img style="width: 100px; height: 20px; border-radius: 20px;" src="./"/>
+           <mat-card-footer style="text-align: center; color: white;"></mat-card-footer>
+           <br>
+         </mat-card>-->
+        <!-- <img style="height: 75px; width: 70px; border-radius: 50px;" src="./assets/images/StockX.svg">-->
+        &nbsp;&nbsp;
+        <mat-label>{{ 'landing.Application_name' | translate}}</mat-label>
+      </mat-toolbar>
+
+
+      <!--Mobile Menu--->
+      <mat-nav-list *ngIf="isHandset$ | async">
+        <a mat-list-item *ngFor="let routeR of menuList" routerLink="{{routeR.menuLink}}"
+           [routerLinkActive]="'is-active'" (click)="drawer.toggle()">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          {{routeR.menuName | translate}}</a>
+      </mat-nav-list>
+
+      <!--Web Menu--->
+      <mat-nav-list *ngIf="!(isHandset$ | async)">
+        <a mat-list-item *ngFor="let routeR of menuList" routerLink="{{routeR.menuLink}}"
+           [routerLinkActive]="'is-active'">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          {{routeR.menuName | translate}}</a>
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button" aria-label="Toggle sidenav" mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon [ngStyle]="{'color':'white'}" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <!-- <img style="width: 50px; height: 50px; border-radius: 20px;" src="">-->
+        <span style="color: white">{{userName}}</span>
+        <span class="filler"></span>
+
+
+        <button mat-button [matMenuTriggerFor]="setting">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <mat-menu #setting="matMenu">
+          <button mat-menu-item>
+            <mat-icon mat-list-icon>person</mat-icon>
+            Profile
+          </button>
+
+          <button mat-menu-item [matMenuTriggerFor]="language" #trigger="matMenuTrigger" (mouseenter)="trigger.focus()">
+            <mat-icon mat-list-icon>language</mat-icon>
+            Language
+          </button>
+
+
+          <button mat-menu-item (click)="changeTheme()" matTooltip="Change your mode">
+            <span *ngIf="!otherTheme"><mat-icon>invert_colors</mat-icon>Dark</span>
+            <span *ngIf="otherTheme"><mat-icon>invert_colors_off</mat-icon>Light</span>
+          </button>
+
+
+          <button mat-menu-item (click)="logout()">
+            <mat-icon mat-list-icon>transit_enterexit</mat-icon>
+            Logout
+          </button>
+        </mat-menu>
+
+        <!--<button mat-button [matMenuTriggerFor]="language">
+          <mat-icon matBadge="3" matBadgeColor="accent" matBadgePosition="above after"
+                    matTooltip="Change your language">language
+          </mat-icon>
+        </button> -->
+        <mat-menu #language="matMenu">
+          <button mat-menu-item (click)="translate.use('en')">English</button>
+          <button mat-menu-item (click)="translate.use('ta')">Tamil</button>
+        </mat-menu>
+
+
+        <!-- -->
+
+
+      </mat-toolbar>
+
+      <!--<select #langselect (change)="translate_Service.use(langselect.value)">
+        <option *ngFor="let lang of translate_Service.getLangs()" [value]="lang">{{lang}}</option>
+      </select>-->
+      <router-outlet></router-outlet>
+
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

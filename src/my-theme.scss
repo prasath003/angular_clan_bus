@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+@include mat-core();
+//Theme WHITE MODE
+$primary : mat-palette($mat-light-blue);
+$accent:  mat-palette($mat-indigo, A200, A100, A400);
+$warn:  mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+//Theme DARK MODE
+$primary : mat-palette($mat-light-blue);
+$accent:  mat-palette($mat-indigo, A200, A100, A400);
+$warn:  mat-palette($mat-red);
+$dark-theme: mat-dark-theme($primary, $accent, $warn);
+
+@function my-mat-light-theme-foreground($color) {
+  @return (
+    base:              $color,
+    divider:           $white-12-opacity,
+    dividers:          $white-12-opacity,
+    disabled:          rgba($color, 0.38),
+    disabled-button:   rgba($color, 0.38),
+    disabled-text:     rgba($color, 0.38),
+    hint-text:         rgba($color, 0.38),
+    secondary-text:    rgba($color, 0.54),
+    icon:              rgba($color, 0.54),
+    icons:             rgba($color, 0.54),
+    text:              rgba($color, 0.87),
+    slider-off:        rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38),
+    slider-min:        rgba($color, 0.38)
+  );
+};
+
+.alternative{
+  $white-foreground: my-mat-light-theme-foreground(white);
+  $dark-theme-custom: map-merge($dark-theme, (foreground: $white-foreground));
+  @include angular-material-theme($dark-theme-custom);
+}
+
+
+

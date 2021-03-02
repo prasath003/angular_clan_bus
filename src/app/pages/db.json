@@ -1,0 +1,32 @@
+{
+  "book": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "details": [
+    {
+      "id": 1,
+      "data" : [{
+      "ticketId":"number",
+      "source":"String",
+      "destination":"String",
+      "age":"number",
+      "seatNo":"number",
+      "userId":"number",
+      "dateOfJourney":"date",
+      "typeOfTicket":"varchar",
+      "amount":"float",
+      "food":"String",
+      "totalAmount":"float",
+      "Status":"string",
+      "class":"string"
+    }]
+    }
+  ],
+  "cancel": {
+    "Status": "string"
+  }
+}

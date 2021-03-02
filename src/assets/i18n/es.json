@@ -1,0 +1,55 @@
+{
+  "landing": {
+    "Application_name": "Hipoteca"
+  },
+  "Register": {
+    "Next_Button": "Próximo",
+    "Back_Button": "atrás",
+    "Register_button": "Registro",
+    "Registration_Title": "Registro",
+    "Registration_Entry_1_Title": "Detalles de la hipoteca",
+    "Registration_Select_Mortage_Type": "Seleccione tipo de hipoteca",
+    "Registration_Property_Value": "Valor de propiedad",
+    "Registration_Deposit": "Depositar",
+    "Registration_Entry_2_Title": "Detalles personales y de ocupación",
+    "Registration_Salutation": "Salutation",
+    "Registration_Gender": "Gender",
+    "Registration_Full_Name": "Nombre completo",
+    "Registration_National_Id": "Numero de identificacion nacional",
+    "Registration_Address_Line_1": "Dirección Línea 1",
+    "Registration_Address_Line_2": "Dirección Línea 2",
+    "Registration_Pincode": "código postal",
+    "Registration_Occupation": "Ocupación",
+    "Registration_Entry_3_Title": "Detalles de contacto",
+    "Registration_Mobile_Number": "Número de teléfono móvil",
+    "Registration_Email": "Correo electrónico"
+  },
+  "Login": {
+    "Login_Button": "Iniciar sesión",
+    "Login_Title": "Iniciar sesión",
+    "Login_UserId": "ID de usuario",
+    "Login_UserPassword": "Contraseña"
+  },
+  "Main": {
+    "App_Title": "Sample App 1",
+    "Option_1_Title": "Option 1",
+    "Option_2_Title": "Option 2",
+    "Option_3_Title": "Option 3"
+  },
+  "Table": {
+    "Title": "Table Title",
+    "Position_1_Title": "Stock_No_1",
+    "Position_2_Title": "Stock_No_2",
+    "Position_3_Title": "Stock_No_3",
+    "Position_4_Title": "Stock_No_4",
+    "Position_5_Title": "Stock_No_5",
+    "Position_6_Title": "Stock_No_6"
+  },
+  "list": {
+    "userName":"User",
+    "userBooks": "Books",
+    "userMobile" : "Mobile",
+    "userId": "Unique ID",
+    "userAction": "Action"
+  }
+}

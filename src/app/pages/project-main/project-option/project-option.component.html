@@ -1,0 +1,166 @@
+<div class="container">
+  <div *ngIf="!confirmed">
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-lg-12" style="margin-top: 10px;">
+          <div class="row">
+            <div class="col-lg-6" align="center">
+              <mat-form-field>
+                <mat-label>{{'Register.Registration_from' | translate}}</mat-label>
+                <mat-select formControlName="salutationType" [(value)]="selectedFromTransport">
+                  <mat-option *ngFor='let tran of transport' value='{{tran.name}}'>
+                    {{tran.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-6" align="center">
+              <mat-form-field>
+                <mat-label>{{'Register.Registration_to' | translate}}</mat-label>
+                <mat-select formControlName="salutationType" [(value)]="selectedToTransport">
+                  <mat-option *ngFor='let tran of transport' value='{{tran.name}}'>
+                    {{tran.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-lg-12" style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-lg-4">
+          <mat-form-field class="example-full-width">
+            <input #ref1 matInput [matDatepicker]="picker" (dateChange)="selectedDate(ref1.value)"
+                   placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+          <mat-form-field>
+            <mat-label>{{'Register.Registration_type' | translate}}</mat-label>
+            <mat-select formControlName="salutationType" [(value)]="selectedTransportType">
+              <mat-option *ngFor='let tran of transportType' value='{{tran.name}}'>
+                {{tran.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="selectedTransportType === 'Normal'">
+      <div class="row">
+        <div class="col-lg-3 background-bus">
+          <img width="250" height="200" src="../../../../assets/images/busFront.png" alt="bus front"/>
+        </div>
+        <div class="col-lg-6" style="border: 1px solid black">
+            <span *ngFor="let seat of seatsArray">
+              <img id="{{seat.number}}" style="width:50px; height: 55px; margin: 5px; transform: rotate(90deg);" src="../../../../assets/images/availableChair.svg" alt="available seat" (click)="changeSeatColor(seat.number)">
+        </span>
+        </div>
+        <div class="col-lg-3">
+          <img width="250" height="200" src="../../../../assets/images/busBack.png" alt="bus front"/>
+        </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="selectedTransportType === 'Volvo'">
+    <div class="row">
+      <div class="col-lg-3 background-bus">
+        <img width="250" height="200" src="../../../../assets/images/busFront.png" alt="bus front"/>
+      </div>
+      <div class="col-lg-6" style="border: 1px solid black">
+        <span *ngFor="let seat of seatsArrayVolvo">
+
+              <img id="v{{seat.number}}" (mouseover)="changeText=true" (mouseout)="changeText=false" style="width:80px; height: 50px; margin: 10px;" src="../../../../assets/images/sleeperChair.png" alt="available seat" (click)="changeSeatVolvoColor(seat.number)">
+              <span *ngIf="changeText"></span>
+        </span>
+      </div>
+      <div class="col-lg-3">
+        <img width="250" height="200" src="../../../../assets/images/busBack.png" alt="bus front"/>
+      </div>
+    </div>
+  </div>
+
+  <h3 *ngIf="selectedSeat.length > 0  || selectedSeatVolvo.length > 0">Passenger Details</h3>
+
+  <div class="row" *ngIf="selectedSeat.length > 0  || selectedSeatVolvo.length > 0" style="margin-top: 10px;">
+    <br>
+    <div class="col-lg-4">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'option.personName' | translate}}</mat-label>
+        <input matInput type="text" placeholder="Age"  [(ngModel)]="this.personName">
+      </mat-form-field>
+    </div>
+     <div class="col-lg-4">
+       <mat-form-field appearance="outline">
+         <mat-label>{{'option.personAge' | translate}}</mat-label>
+         <input matInput type="text" placeholder="Age"  [(ngModel)]="this.personAge">
+       </mat-form-field>
+     </div>
+    <div class="col-lg-4">
+      <mat-form-field>
+        <mat-label>{{'option.personFood' | translate}}</mat-label>
+        <mat-select formControlName="salutationType" [(value)]="selectedFood">
+          <mat-option *ngFor='let tran of food' value='{{tran.value}}'>
+            {{tran.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" (click)="addPassenger()">{{'option.add_passenger_button' | translate}}</button>
+    </div>
+  </div>
+  
+  <div *ngIf="passengers.length > 0" class="row" style="margin-top: 10px;" >
+    <div class="col-lg-12">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'option.bookSearch' | translate}}</mat-label>
+        <input matInput class="card" type="text" (keyup)="setFilteredItems($event)">
+      </mat-form-field>
+    </div>
+    <div *ngIf="selectedSeat.length > 0" style="text-align: center" style="color: red">
+      * Need {{selectedSeat.length - passengers.length}} passenger details since selected no of seat {{selectedSeat.length}}
+    </div>
+
+    <div *ngIf="selectedSeatVolvo.length > 0" style="text-align: center" style="color: red">
+      * Need {{selectedSeatVolvo.length - passengers.length}} passenger details since selected no of seat {{selectedSeatVolvo.length}}
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-sm-4" *ngFor="let pass of passengers">
+      <mat-card>
+        <mat-card-content>
+          <b>Passenger Name :</b>{{pass.personName}}    <br>
+          <b>Age :</b> {{pass.age}}  <br>
+          <b>Food Required :</b>   {{pass.food}}
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <div *ngIf="passengers.length === (selectedSeat.length || selectedSeatVolvo.length)"
+       class="row" style="margin-top: 10px;" >
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4" style="text-align: center">
+      <button mat-raised-button color="primary" (click)="confirmPassenger()">{{'option.confirm_passenger_button' | translate}}</button>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
+
+
+  </div>
+
+
+  <div *ngIf="loading">
+    <app-loading-skeleton></app-loading-skeleton>
+  </div>
+</div>

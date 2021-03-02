@@ -1,0 +1,69 @@
+{
+  "landing": {
+    "Application_name": "Library"
+  },
+  "Register": {
+    "Next_Button": "Next",
+    "Back_Button": "Back",
+    "Register_button": "Register",
+    "Registration_Title": "Registration",
+    "Registration_Entry_1_Title": "Mortgage Details",
+    "Registration_Select_Mortage_Type": "Select Type of Mortage",
+    "Registration_Property_Value": "Property Value",
+    "Registration_Deposit": "Deposit",
+    "Registration_Entry_2_Title": "Personal & Occupation Details",
+    "Registration_to": "To Travel",
+    "Registration_from": "From",
+    "Registration_Gender": "Gender",
+    "Registration_type": "Select Type",
+    "Registration_National_Id": "National Id Number",
+    "Registration_Address_Line_1": "Address Line 1",
+    "Registration_Address_Line_2": "Address Line 2",
+    "Registration_Pincode": "Pincode",
+    "Registration_Occupation": "Occupation",
+    "Registration_Entry_3_Title": "Contact Details",
+    "Registration_Mobile_Number": "Mobile number",
+    "Registration_Email": "Email",
+    "Registration_UserName": "User name"
+  },
+  "Login": {
+    "Login_Button": "Login",
+    "Login_Title": "Login",
+    "Login_UserId": "User id",
+    "Login_UserPassword": "Password"
+  },
+  "Main": {
+    "App_Title": "Travel",
+    "Option_1_Title": "Book Travel",
+    "Option_2_Title": "Tickets",
+    "Option_3_Title": "Option 3"
+  },
+  "Table": {
+    "Title": "Ticket History",
+    "Position_1_Title": "Ticket",
+    "Position_2_Title": "Source",
+    "Position_3_Title": "Destination",
+    "Position_4_Title": "Seat",
+    "Position_5_Title": "Date",
+    "Position_6_Title": "TotalAmount",
+    "Position_7_Title": "Status",
+    "Position_8_Title": "Action"
+  },
+  "list": {
+    "userName":"User",
+    "userBooks": "Books",
+    "userMobile" : "Mobile",
+    "userId": "Unique ID",
+    "userAction": "Action"
+  },
+  "option": {
+    "bookSearch": "Search Person",
+    "personName": "Name",
+    "personAge": "Age",
+    "personFood": "Food",
+    "add_passenger_button" : "Add Passenger",
+    "confirm_passenger_button" : "Confirm",
+    "bookCount": "No of Persons",
+    "addBook": "Add Book"
+  }
+}

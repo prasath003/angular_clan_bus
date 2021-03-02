@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <mat-card-title style="align-content: center"> {{ 'Table.Title' | translate}}</mat-card-title>
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      </mat-form-field>
+
+      <div class="mat-elevation-z8" *ngIf="tabledata !== undefined">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="position_1">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{titleData[0].title | translate}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.ticketId}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_2">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[1].title | translate}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_3">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[2].title | translate}}</th>
+            <td mat-cell *matCellDef="let element">{{element.destination}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_4">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[3].title | translate}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.seatNo}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_5">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[4].title | translate}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.dateOfJourney}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_6">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[5].title | translate}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.totalAmount}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_7">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[6].title | translate}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.Status}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="position_8">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{titleData[7].title | translate}}</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button color="primary"
+                      (click)="cancel(element)">
+                Cancel
+              </button>
+            </td>
+          </ng-container>
+          
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
